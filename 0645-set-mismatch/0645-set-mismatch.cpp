@@ -2,17 +2,17 @@ class Solution {
 public:
     vector<int> findErrorNums(vector<int>& nums) {
         vector<int> ans;
-        int i = 0;
-        while(i<nums.size())
+        int n = 0;
+        while(n<nums.size())
         {
-            int correct = nums[i]-1;
-            if( nums[i]!=nums[correct])
+            int correct = nums[n]-1;
+            if( nums[n]!=nums[correct])
             {
-                swap(nums[i],nums[correct]);
+                swap(nums[n],nums[correct]);
             }
             else
             {
-                i++;
+                n++;
             }
         }
         for(int i=0;i<nums.size();i++)
