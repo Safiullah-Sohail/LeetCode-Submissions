@@ -1,29 +1,26 @@
-class Solution
-{
+class Solution {
 public:
-    vector<int> findErrorNums(vector<int> &a)
-    {
+    vector<int> findErrorNums(vector<int>& nums) {
         vector<int> ans;
-        unordered_map<int, int> freqMap;
-        sort(a.begin(), a.end());
-        for (int i = 1; i <= a.size(); i++)
-            freqMap[i] = 0;
-        for (auto &it : a)
-            freqMap[it]++;
-        for (auto &it : freqMap)
+        int i = 0;
+        while(i<nums.size())
         {
-            if (it.second == 2)
+            int correct = nums[i]-1;
+            if( nums[i]!=nums[correct])
             {
-                ans.push_back(it.first);
-                break;
+                swap(nums[i],nums[correct]);
+            }
+            else
+            {
+                i++;
             }
         }
-        for (auto &it : freqMap)
+        for(int i=0;i<nums.size();i++)
         {
-            if (it.second == 0)
+            if(nums[i]!=i+1 )
             {
-                ans.push_back(it.first);
-                break;
+                ans.push_back(nums[i]);
+                ans.push_back(i+1);
             }
         }
         return ans;
