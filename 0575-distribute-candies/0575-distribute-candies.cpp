@@ -4,7 +4,7 @@ public:
     int distributeCandies(vector<int> &candyType)
     {
         unordered_map<int, int> m;
-        for (int i=0 ; i<candyType.size() ; i++)
+        for (int i = 0; i < candyType.size(); i++)
             m[candyType[i]]++;
         int allowed = candyType.size() / 2;
         if (allowed >= m.size())
@@ -13,8 +13,6 @@ public:
         int eaten = 0;
         while (it != m.end())
         {
-            if (it->second > 0)
-                it->second--;
             eaten++;
             if (eaten > allowed)
                 break;
