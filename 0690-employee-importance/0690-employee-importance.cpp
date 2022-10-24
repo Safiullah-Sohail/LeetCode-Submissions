@@ -8,25 +8,22 @@ public:
 };
 */
 
-class Solution {
+class Solution
+{
 public:
-    int totalImportance = 0;
-    unordered_map<int, Employee*> map;
-    
-    void checkEmployee(int id) {
-        totalImportance += map[id]->importance;
-		
-        for(int x: map[id]->subordinates) {
+    int tlImp = 0;
+    unordered_map<int, Employee *> map;
+    void checkEmployee(int idx)
+    {
+        tlImp += map[idx]->importance;
+        for (int x : map[idx]->subordinates)
             checkEmployee(x);
-        }
     }
-    
-    int getImportance(vector<Employee*> employees, int id) {
-        for(auto x: employees){
+    int getImportance(vector<Employee *> employees, int id)
+    {
+        for (auto x : employees)
             map[x->id] = x;
-        }
-        
         checkEmployee(id);
-        return totalImportance;
+        return tlImp;
     }
 };
