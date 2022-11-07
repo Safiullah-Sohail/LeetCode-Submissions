@@ -29,13 +29,13 @@ public:
         {
             if (boxTypes[i][0] >= truckSize)
             {
-                count += truckSize * boxTypes[i][1];
+                count = count + (truckSize * boxTypes[i][1]);
                 truckSize = 0;
             }
             else
             {
-                truckSize -= boxTypes[i][0];
-                count += boxTypes[i][0] * boxTypes[i][1];
+                truckSize = truckSize - boxTypes[i][0];
+                count = count + (boxTypes[i][0] * boxTypes[i][1]);
             }
         }
         return count;
