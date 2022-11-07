@@ -14,7 +14,7 @@ class Solution
                     if (key > array[j])
                         break;
                 }
-            array[j + 1] = key;
+                array[j + 1] = key;
             }
         }
     }
