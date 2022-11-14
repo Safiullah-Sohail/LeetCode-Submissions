@@ -8,7 +8,9 @@ public:
         {
             if (nums[lp] == 0 && nums[rp] != 0)
             {
-                swap(nums[lp],nums[rp]);
+                int temp = nums[lp];
+                nums[lp++] = nums[rp];
+                nums[rp++] = temp;
             }
             else if (nums[lp] == 0 && nums[rp] == 0)
             {
