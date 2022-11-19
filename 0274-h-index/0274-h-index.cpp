@@ -30,6 +30,7 @@ public:
         int count = 0;
         for (index = 0; index<n ; index++)
         {
+            cout<<citations[index]<<"\t"<<index<<endl;
             if(index >= citations[index])
                 break;
         }
