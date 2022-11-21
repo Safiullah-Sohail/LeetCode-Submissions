@@ -22,20 +22,6 @@ class Solution
         }
         return output;
     }
-    void selectionSort(vector<vector<int>> &array)
-    {
-        for (int i = 0; i < array.size(); i++)
-        {
-            int minIdx = array[i][2];
-            for (int j = i + 1; j < array.size(); j++)
-            {
-                int temp = array[j][2];
-                if (array[j][2] < minIdx)
-                    minIdx = array[j][2];
-            }
-            swap(array[minIdx], array[i]);
-        }
-    }
 public:
     vector<vector<int>> allCellsDistOrder(int rows, int cols, int rCenter, int cCenter)
     {
