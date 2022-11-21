@@ -40,7 +40,7 @@ public:
         {
             vecPair.push_back(make_pair(i.second, i.first));
         }
-        sort(vecPair.begin(), vecPair.end());
+        vecPair = countSort(vecPair);
         string ans = "";
         for (auto i : vecPair)
         {
